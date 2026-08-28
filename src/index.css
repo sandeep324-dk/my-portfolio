@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  ::selection {
+    background: #2563EB;
+    color: #fff;
+  }
+  body {
+    background-color: #0F172A;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.08), transparent 40%),
+      radial-gradient(circle at 80% 60%, rgba(139, 92, 246, 0.08), transparent 40%);
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+  }
+  :focus-visible {
+    outline: 2px solid #06B6D4;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Glassmorphism card */
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl shadow-card transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply border-white/20 shadow-glow -translate-y-1;
+  }
+
+  /* Gradient border wrapper */
+  .gradient-border {
+    position: relative;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #0F172A, #111827);
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #2563EB, #06B6D4, #8B5CF6);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-24;
+  }
+
+  .section-eyebrow {
+    @apply inline-block text-sm tracking-[0.3em] uppercase text-secondary font-semibold mb-3;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl md:text-5xl font-display font-bold text-textLight mb-4;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-primary bg-clip-text text-transparent bg-200 animate-gradientShift;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold text-white
+    bg-gradient-primary bg-200 shadow-glow transition-all duration-300 hover:scale-105 hover:shadow-glow-violet
+    focus-visible:scale-105 overflow-hidden;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold text-textLight
+    border border-white/20 glass transition-all duration-300 hover:border-secondary hover:text-secondary hover:-translate-y-0.5;
+  }
+
+  .nav-link {
+    @apply relative text-sm font-medium text-textMuted hover:text-textLight transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+}
+
+/* Ripple effect for buttons */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-anim 600ms linear;
+  background-color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+@keyframes ripple-anim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Cursor spotlight */
+.spotlight {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(37, 99, 235, 0.08), transparent 40%);
+  transition: background 0.15s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#2563EB, #8B5CF6);
+  border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
