@@ -38,7 +38,7 @@ export const skillCategories = [
   {
     title: 'Languages',
     skills: [
-      { name: 'Java', level: 85 },
+      { name: 'Java', level: 90 },
       { name: 'JavaScript', level: 80 },
       { name: 'HTML5', level: 90 },
       { name: 'CSS3', level: 85 },
@@ -52,24 +52,24 @@ export const skillCategories = [
       { name: 'Hibernate', level: 72 },
       { name: 'JDBC', level: 80 },
       { name: 'Maven', level: 75 },
-      { name: 'Node.js', level: 75 },
-      { name: 'Express.js', level: 72 },
+      // { name: 'Node.js', level: 75 },
+      // { name: 'Express.js', level: 72 },
     ],
   },
-  {
-    title: 'Frontend',
-    skills: [
-      { name: 'React.js', level: 82 },
-      { name: 'Tailwind CSS', level: 85 },
-      { name: 'Responsive Design', level: 88 },
-    ],
-  },
+  // {
+  //   title: 'Frontend',
+  //   skills: [
+  //     { name: 'React.js', level: 82 },
+  //     { name: 'Tailwind CSS', level: 85 },
+  //     { name: 'Responsive Design', level: 88 },
+  //   ],
+  // },
   {
     title: 'Database',
     skills: [
       { name: 'MySQL', level: 80 },
       { name: 'Oracle', level: 68 },
-      { name: 'MongoDB', level: 75 },
+      // { name: 'MongoDB', level: 75 },
     ],
   },
   {
@@ -78,7 +78,7 @@ export const skillCategories = [
       { name: 'Git', level: 85 },
       { name: 'GitHub', level: 85 },
       { name: 'VS Code', level: 90 },
-      { name: 'Postman', level: 78 },
+      // { name: 'Postman', level: 78 },
     ],
   },
 ]
@@ -117,17 +117,20 @@ export const projects = [
     image: 'motion-graphics',
   },
   {
-    id: 'weathersphere',
-    title: 'WeatherSphere',
+    id: 'HireHub – Campus Placement Management System',
+    title: 'HireHub – Campus Placement Management System',
     description:
-      'A responsive weather forecast application with real-time updates, geolocation support and a 5-day outlook.',
+      'A comprehensive platform for managing campus placements, connecting students with recruiters and providing real-time updates.',
     features: [
-      'Real-time weather via the OpenWeather API',
-      'Geolocation-based auto-detect',
-      '5-day forecast with dark mode',
-      'Clean, mobile-first interface',
+      'Student profile management and resume building',
+      'Job posting and application tracking',
+      'Interview scheduling and feedback collection',
+      'Analytics and reporting for placement statistics',
     ],
-    tech: ['HTML', 'CSS', 'JavaScript', 'OpenWeather API'],
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+    github: 'https://github.com/sandeep324-dk',
+    demo: '',
+    image: 'hirehub',
     github: 'https://github.com/sandeep324-dk',
     demo: '',
     image: 'weathersphere',

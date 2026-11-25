@@ -18,7 +18,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173
+Open https://my-portfolio-kz9g.onrender.com
 
 ## Build for production
 
